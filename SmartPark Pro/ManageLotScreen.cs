@@ -463,7 +463,7 @@ namespace SmartPark_Pro
             lbOverstayed.Text = "";
             lbParkingAI.Text = "PARKING AI WAITING";
             lbParkingAI.BackColor = Color.DeepSkyBlue;
-            string imagePath = baseImgURL+"blankcar.png";
+            string imagePath = baseImgURL+ "placeholder.png";
             Image images = await LoadImageFromUrlAsync(imagePath);
             imgCarImage.Image = images;
 
@@ -534,7 +534,7 @@ namespace SmartPark_Pro
             btDelete.Visible = false;
             gvReservations.Visible = false;
             lbParkingAI.Text = "PARKING AI WAITING";
-            lbParkingAI.BackColor = Color.DeepSkyBlue;
+            lbParkingAI.BackgroundColor = Color.DeepSkyBlue;
             tlDetails.Visible = true;
             tlReservation.Visible = false;
             btCancel.Visible = false;
@@ -690,7 +690,7 @@ namespace SmartPark_Pro
             }
         }
 
-     
+       
     }
 }
 // Class to hold a car make and its models.
