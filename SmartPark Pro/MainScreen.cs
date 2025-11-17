@@ -46,7 +46,7 @@ namespace SmartPark_Pro
             {
                 if (ctrl is MdiClient)
                 {
-                    ctrl.BackColor = Color.Gainsboro; // choose any color you want
+                 //   ctrl.BackColor = Color.Black; // choose any color you want
                 }
             }
         }

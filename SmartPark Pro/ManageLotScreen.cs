@@ -245,7 +245,7 @@ namespace SmartPark_Pro
         }
 
 
-        private async void btEntryGate_Click(object sender, EventArgs e)
+        private async void btEntryGate_Click_1(object sender, EventArgs e)
         {
 
             loadingSate(true);
@@ -266,7 +266,7 @@ namespace SmartPark_Pro
                 string imagePath = baseImgURL + vehicleModel + ".png";
                 imgCarImage.Image = await LoadImageFromUrlAsync(imagePath);
                 lbParkingAI.Text = "VEHICLE DETECTED!";
-                lbParkingAI.BackColor = Color.Crimson;
+                lbParkingAI.BackgroundColor = Color.Crimson;
                 await Task.Delay(1000);
                 loadingSate(false);
 
@@ -383,7 +383,7 @@ namespace SmartPark_Pro
                 Image image = await LoadImageFromUrlAsync(imagePath);
                 imgCarImage.Image = image;
                 lbParkingAI.Text = "VEHICLE DETECTED!";
-                lbParkingAI.BackColor = Color.Crimson;
+                lbParkingAI.BackgroundColor = Color.Crimson;
                 lbOperation.Text = operation;
                 lbTicket.Text = ticketNumber.ToString();
                 lbEntryTime.Text = entryTime.ToString();
@@ -462,7 +462,7 @@ namespace SmartPark_Pro
             lbPaid.Text = "";
             lbOverstayed.Text = "";
             lbParkingAI.Text = "PARKING AI WAITING";
-            lbParkingAI.BackColor = Color.DeepSkyBlue;
+            lbParkingAI.BackgroundColor = Color.DeepSkyBlue;
             string imagePath = baseImgURL+ "placeholder.png";
             Image images = await LoadImageFromUrlAsync(imagePath);
             imgCarImage.Image = images;
@@ -499,7 +499,7 @@ namespace SmartPark_Pro
             return reservations.Count;
         }
 
-        private void btReservation_Click(object sender, EventArgs e)
+        private void btReservation_Click_1(object sender, EventArgs e)
         {
 
             //show the reservation details on the form
@@ -514,7 +514,7 @@ namespace SmartPark_Pro
             btDelete.Visible = true;
             gvReservations.Visible = true;
             lbParkingAI.Text = "RESERVATIONS";
-            lbParkingAI.BackColor = Color.Blue;
+            lbParkingAI.BackgroundColor = Color.Blue;
             tlDetails.Visible = false;
             tlReservation.Visible = true;
             btCancel.Visible = true;
@@ -522,7 +522,7 @@ namespace SmartPark_Pro
 
         }
 
-        private void btCancel_Click(object sender, EventArgs e)
+        private void btCancel_Click_1(object sender, EventArgs e)
         {
             clearVehicleDetails();
             imgCarImage.Visible = true;
@@ -541,7 +541,7 @@ namespace SmartPark_Pro
 
         }
 
-        private void btAdd_Click(object sender, EventArgs e)
+        private void btAdd_Click_1(object sender, EventArgs e)
         {
 
             if (string.IsNullOrEmpty(tbLicensePlateRES.Text) || string.IsNullOrEmpty(tbMakeRES.Text) || string.IsNullOrEmpty(tbModelRES.Text) || string.IsNullOrEmpty(tbColorRES.Text))
@@ -585,7 +585,7 @@ namespace SmartPark_Pro
                 UpdateSpaceNumbers();
                 clearVehicleDetails();
                 lbParkingAI.Text = "RESERVATIONS";
-                lbParkingAI.BackColor = Color.Blue;
+                lbParkingAI.BackgroundColor = Color.Blue;
 
                 //show the reservation details on the form
                 LoadReservationGridView();
@@ -621,7 +621,7 @@ namespace SmartPark_Pro
             }
         }
 
-        private void btEdit_Click(object sender, EventArgs e)
+        private void btEdit_Click_1(object sender, EventArgs e)
         {
             var ticketNumber = gvReservations.SelectedRows[0].Cells[0].Value;
             var reservation = _db.VehiclesDetecteds.Where(v => v.TicketNumber == (int)ticketNumber).FirstOrDefault();
@@ -638,7 +638,7 @@ namespace SmartPark_Pro
 
 
 
-        private async void btDelete_Click(object sender, EventArgs e)
+        private async void btDelete_Click_1(object sender, EventArgs e)
         {
 
             if (gvReservations.SelectedRows.Count > 0)
@@ -688,6 +688,11 @@ namespace SmartPark_Pro
                     return Image.FromStream(mem);
                 }
             }
+        }
+
+        private void ManageLotScreen_Load(object sender, EventArgs e)
+        {
+
         }
 
        

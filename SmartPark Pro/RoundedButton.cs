@@ -5,6 +5,10 @@ using System.Windows.Forms;
 
 public class RoundedButton : Button
 {
+    public int BorderRadius { get; set; } = 20;
+    public Color BorderColor { get; set; } = Color.White;
+    public int BorderSize { get; set; } = 2;
+    public Color BackgroundColor { get; set; } = Color.RoyalBlue;
     protected override void OnPaint(PaintEventArgs e)
     {
         int radius = 20;
@@ -23,6 +27,11 @@ public class RoundedButton : Button
         {
             e.Graphics.FillPath(brush, path);
         }
+        using (SolidBrush brush = new SolidBrush(BackgroundColor))
+            e.Graphics.FillPath(brush, path);
+
+        using (Pen pen = new Pen(BorderColor, BorderSize))
+            e.Graphics.DrawPath(pen, path);
 
         TextRenderer.DrawText(e.Graphics, Text, Font, ClientRectangle, Color.White);
     }
