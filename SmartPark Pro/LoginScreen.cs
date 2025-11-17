@@ -58,8 +58,7 @@ namespace SmartPark_Pro
             LoadingForm loadingForm = new LoadingForm();
             try
             {
-                tbUsername.Text = "admin";
-                tbPassword.Text = "password";
+               
                 SHA256 sha = SHA256.Create();
                 if (string.IsNullOrEmpty(tbUsername.Text) || string.IsNullOrEmpty(tbPassword.Text))
                 {
